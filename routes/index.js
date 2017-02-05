@@ -8,7 +8,8 @@ let currentDate = new Date();
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
   res.render('content/index', {
-    title: 'Home'
+    title: 'Home',
+    skills:"Web Developer &#x25CF; .NET Developer &#x25CF; Software Engineer"
    });
 });
 
