@@ -42,21 +42,27 @@ footer .footer-col {
   margin-bottom: 10px;
 }
 footer .footer-below {
+    margin-top:50px;
   padding: 25px 0;
   background-color: #233140;
 }
 
 .name {
   display: block;
-  font-weight: 700;
-  font-size: 2em;
+  font-weight: 900;
+  font-size: 4em;
   
 }
 
 .skills {
   display: block;
-  font-weight: 300;
-  font-size: 1.25em;
+  font-weight: 600;
+  font-size: 3em;
+}
+
+.text-main{
+    font-weight: 300;
+  font-size: 2em;
 }
 
 .img-main{
