@@ -1,3 +1,10 @@
+/*
+ *   File-name: index.js
+ *   Author's name: Tony Bogun   
+ *   Web-site name: antonybogun.herokuapp.com
+ *   File description: Handles routes to web-pages
+ */
+
 let express = require('express');
 let router = express.Router();
 

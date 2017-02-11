@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
+/*
+ *   File-name: server.js
+ *   Author's name: Tony Bogun   
+ *   Web-site name: antonybogun.herokuapp.com
+ *   File description: Contains server setup
+ */
+
 /**
  * Module dependencies.
  */

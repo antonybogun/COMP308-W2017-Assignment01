@@ -1,3 +1,10 @@
+/*
+ *   File-name: app.js
+ *   Author's name: Tony Bogun   
+ *   Web-site name: antonybogun.herokuapp.com
+ *   File description: Contains express setup
+ */
+
 let express = require('express');
 let path = require('path'); // part of node.js core
 let favicon = require('serve-favicon');
