@@ -6,11 +6,21 @@
  */
 
 let express = require('express');
+let nodemailer = require('nodemailer');
 let router = express.Router();
 
 // Global Route Variables
 let currentDate = new Date();
 currentDate = currentDate.toLocaleTimeString();
+
+// create reusable transporter object using the default SMTP transport
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'tbportfoliomessage@gmail.com',
+        pass: 'qwertyasdfgh'
+    }
+});
 
 /* GET home page. wildcard */
 router.get('/', (req, res, next) => {
@@ -45,8 +55,47 @@ router.get('/services', (req, res, next) => {
 /* GET contact page. */
 router.get('/contact', (req, res, next) => {
     res.render('content/contact', {
-        title: 'Contact'
+        title: 'Contact',
+        messageSent: false
     });
 });
+
+/* GET contact page. */
+router.post('/contact', (req, res, next) => {
+
+    let name = req.body.inputName;
+    let emailAddr = req.body.inputEmail;
+    let message = req.body.inputMessage;
+
+    let fromParam = "\"" + req.body.inputName + "\" < " + req.body.inputEmail + " > ";
+    let htmlParam = "<b>Name: </b>" + name + "<br/>" + "<b>Email: </b>" + emailAddr + "<br/>" + "<b>Message: </b>" + message;
+
+    let mailOptions = {
+        from: fromParam, // sender address
+        to: 'antonybogun@gmail.com', // list of receivers
+        subject: 'Tony Bogun\'s Portfolio Message', // Subject line
+        html: htmlParam
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            res.render('content/contact', {
+                title: 'Contact',
+                messageSent: true,
+                error: true
+            })
+        }
+        // Email sent
+        else {
+            res.render('content/contact', {
+                title: 'Contact',
+                messageSent: true,
+                error: false
+            })
+        }
+    });
+});
+
 
 module.exports = router;
