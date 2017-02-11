@@ -1,20 +1,18 @@
 <% include ../partials/header.ejs %>
 
-<!-- CONTENT PAGE FOR HOME -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">              
-                    <img class="img-main" src="Assets/images/main-icon.png" alt="">
-                    <div class="intro-text">
-                        <span class="name">Tony Bogun's Portfolio</span>
-                        <hr class="divider">
-                        <span class="skills"><%- skills %></span>
-                        <br/>
-                        <p class="text-main">
-                        I am a responsible, proactive, and fast-learning IT professional with over 2 years’ hands-on experience and strong educational background in Software Engineering, who is passionate about ambitious projects, robust development, and high-quality software
-                        </p>
-                    </div>
-                </div>
+    <!-- CONTENT PAGE FOR HOME -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 text-center">
+                <img class="img-main" src="Assets/images/main-icon.png" alt="">
+                <span class="name">Tony Bogun's Portfolio</span>
+                <hr class="divider">
+                <span class="skills"><%- skills %></span>
+                <br/>
+                <p class="text-main">
+                    <%- description %>
+                </p>
             </div>
         </div>
-<% include ../partials/footer.ejs %>
+    </div>
+    <% include ../partials/footer.ejs %>
